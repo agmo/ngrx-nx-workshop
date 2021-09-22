@@ -26,7 +26,7 @@ export class ProductDetailsComponent {
     switchMap(id => this.productService.getProduct(id))
   );
 
-  private customerRating$ = new BehaviorSubject<number | undefined>(undefined);
+  customerRating$ = new BehaviorSubject<number | undefined>(undefined); // Using Behavior Subject because customerRating$ is subscribed twice in the template and Behaviour Subject is multicast.
 
   constructor(
     private readonly router: ActivatedRoute,
