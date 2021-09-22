@@ -18,6 +18,7 @@ export class ProductDetailsComponent {
   private readonly productId$ = this.router.paramMap.pipe(
     map((params: ParamMap) => params.get('productId')),
     filter((id: string | null): id is string => !!id),
+    // Shared using shareReplay because it's used by product$ and by productId$.
     shareReplay({ bufferSize: 1, refCount: true })
   );
 

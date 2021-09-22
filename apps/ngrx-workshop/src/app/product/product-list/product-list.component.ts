@@ -31,8 +31,8 @@ export class ProductListComponent implements OnInit {
         }
         return ratingsMap;
       }),
-      shareReplay({
-        refCount: true,
+      shareReplay({ // Shared so that each ngFor item does not refetch it.
+        refCount: true, // When used in a component without refCount, results in a memory leak.
         bufferSize: 1
       })
     );

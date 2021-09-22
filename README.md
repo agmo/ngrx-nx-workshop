@@ -82,3 +82,10 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
+
+-----------------
+agmo -> based on milestone 1 (`m1` tag)
+
+`ng serve api` start the backend
+
+`ng serve ngrx-workshop` starts the front-end
