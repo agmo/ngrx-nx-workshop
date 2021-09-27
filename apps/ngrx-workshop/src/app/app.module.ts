@@ -11,6 +11,7 @@ import { productReducer } from './product/state/product.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { ProductEffects } from './product/state/product.effects';
+import { CartModule } from './cart/cart.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +23,8 @@ import { ProductEffects } from './product/state/product.effects';
     MatToolbarModule,
     StoreModule.forRoot({product: productReducer}),
     StoreDevtoolsModule.instrument({ maxAge: 50 }),
-    EffectsModule.forRoot([ProductEffects])
+    EffectsModule.forRoot([ProductEffects]),
+    CartModule
   ],
   bootstrap: [AppComponent]
 })
